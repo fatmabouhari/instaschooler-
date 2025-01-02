@@ -7,7 +7,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+  isCollapsed: boolean = false; // Propriété pour gérer l'état du menu latéral
+
   constructor(private router: Router) {}
+
+  // Méthode pour basculer le menu latéral
+  toggleSidebar(): void {
+    this.isCollapsed = !this.isCollapsed;
+  }
 
   // Vérifie si l'utilisateur est sur le tableau de bord
   isDashboard(): boolean {
